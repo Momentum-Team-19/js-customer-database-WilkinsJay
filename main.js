@@ -18,6 +18,18 @@ for (let customer of customers) {
     let emailDiv = document.createElement('p')
     emailDiv.innerText = customer.email
     customerDiv.appendChild(emailDiv)
-    mainContainer.appendChild(customerDiv)
+    
+    let locationDiv = document.createElement('p')
+    locationDiv.innerText = `${customer.location.street} ${customer.location.number} ${customer.location.name}`
+    customerDiv.appendChild(locationDiv)
 
+    let dobDiv = document.createElement('p')
+    dobDiv.innerText = `${customer.dob.date} ${customer.dob.age}`
+    customerDiv.appendChild(dobDiv)
+
+    let registeredDiv = document.createElement('p')
+    registeredDiv.innerText = `${customer.registered.date} ${customer.registered.age}`
+    customerDiv.appendChild(registeredDiv)
+    
+    mainContainer.appendChild(customerDiv)
 }
