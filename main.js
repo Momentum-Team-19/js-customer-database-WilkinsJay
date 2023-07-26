@@ -20,11 +20,11 @@ for (let customer of customers) {
     customerDiv.appendChild(emailDiv)
     
     let locationDiv = document.createElement('p')
-    locationDiv.innerText = `${customer.location.street} ${customer.location.number} ${customer.location.name}`
+    locationDiv.innerText = `${customer.location.street.number} ${customer.location.street.name}\n ${customer.location.city} ${nameToAbbr(customer.location.state)} ${customer.location.postcode}` 
     customerDiv.appendChild(locationDiv)
 
     let dobDiv = document.createElement('p')
-    dobDiv.innerText = `${customer.dob.date} ${customer.dob.age}`
+    dobDiv.innerText = `${moment (customer.dob.date).format("MMM Do YY")} Age ${customer.dob.age}`
     customerDiv.appendChild(dobDiv)
 
     let registeredDiv = document.createElement('p')
@@ -33,3 +33,4 @@ for (let customer of customers) {
     
     mainContainer.appendChild(customerDiv)
 }
+
